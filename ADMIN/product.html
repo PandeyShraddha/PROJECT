@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="product.css" />
+    <title>DigitalLync</title>
+    <h1 style="text-align: center">Add Product Form</h1>
+
+</head>
+
+<body>
+        <input id="logout" type="submit" onclick="logout()" value="Logout" style="position: absolute;float: right;margin-left: 950px;">>
+    <form id="form">
+        Product Id   *  :<input type="text" id="product_id"> <br><br>
+        Product Name *  :<input type="text" id="name"> <br><br>
+        Description     :<input type="text" id="des"> <br><br>
+        Price(in INR)   :<input type="text" id="price"> <br><br>
+        Image Url       :<input type="text" id="image"> <br><br>
+        <input id="submitbtn" type="submit" onclick="addproduct()" value="Add">
+        <input id="edittbtn" type="submit" value="Update Me">
+    </form>
+
+    <div id="cont" class="grid-container">
+    </div>
+
+
+    <script type="text/javascript" src="product.js"></script>
+</body>
+
+</html>

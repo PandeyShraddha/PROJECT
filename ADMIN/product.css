@@ -1,0 +1,12 @@
+form {
+    text-align: center;
+ }
+body{
+    background-color: yellow;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+  }

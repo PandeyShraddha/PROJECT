@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Welcome to user window.</p>
+<form id="form">
+  <input id="submitbtn" type="submit" onclick="displayproduct()" value="Product Display">
+</form>
+
+<div id="cont1" class="grid-container">
+  </div>
+
+<script>
+
+function displayproduct() {
+  event.preventDefault();
+  var retrievedObject = JSON.parse(localStorage.getItem('product'));
+
+   for (var i= 0 ; i<retrievedObject.length; i++) {
+    var iDiv = document.createElement('div');
+    iDiv.id = i;
+    // iDiv.className = 'block';
+    var img = document.createElement('img');
+    // iDiv.style.backgroundImage="url('https://www.fnordware.com/superpng/pnggrad16rgb.png')";
+    img.src = retrievedObject[i]['image'];
+    img.style.width = "250px";
+    img.style.height = "250px";
+    iDiv.style.display = "inline-block";
+    iDiv.appendChild(img);
+
+    var addtocart=document.createElement('div');
+    var addtocartobuttn=document.createElement('input');
+    addtocartobuttn.type="button";
+    addtocartobuttn.value="addtocart";
+    addtocart.value=i;
+    addtocart.style.visibility="hidden";
+    iDiv.appendChild(addtocart);
+    iDiv.appendChild(addtocartobuttn);
+    addtocartobuttn.onclick = function() {
+		  alert ("AddtoCart");	
+    }
+        
+    var namelabel = document.createElement("div");
+    namelabel.innerHTML = "Name:  " + retrievedObject[i]['name'];
+    iDiv.appendChild(namelabel);
+    var pricelabel = document.createElement("div");
+    pricelabel.innerHTML = "Price  :" + retrievedObject[i]['price'];
+    iDiv.appendChild(pricelabel);
+    var deslabel = document.createElement("div");
+    deslabel.innerHTML = "Description  :" + retrievedObject[i]['des'];
+    iDiv.appendChild(deslabel);
+    
+}
+var div = document.getElementById('cont1');
+div.appendChild(iDiv);
+document.getElementById("form").reset();
+
+// i++;
+
+}
+
+</script>
+
+</body>
+</html>

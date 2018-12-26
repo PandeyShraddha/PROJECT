@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Registration form</title>
+     <link rel = "stylesheet" href="loginStyle.css">
+  </head>
+  
+  <input type='checkbox' id='form-switch'>
+    <form id='login-form' action="" method='post'>
+      <input type="text" id="login_username" placeholder="Username" required>
+      <input type="password" id="login_password" placeholder="Password" required>
+      <button type='submit' onclick="login()">Login</button>
+      <button type='submit' onclick="forget_passwd()" >Forgot Pasword</button>
+      <label for='form-switch'><span>Register</span></label>
+    </form>
+
+    <form id='register-form' action="" method='post'>
+      <input type="text" id="register_username" placeholder="Username" required>
+      <input type="email" id="register_email" placeholder="Email" required>
+      <input type="password" id="register_password" placeholder="Password" required>
+      <input type="password" id="register_repassword" placeholder="Re Password" required>
+      <button type='submit' onclick="register()" >Register</button>
+      <label for='form-switch'>Already Member ? Sign In Now..</label>
+    </form>
+    
+    <script type="text/javascript" src="LOGIN_FORM_SCRIPTS\registration_login_form_script.js"></script>
+</html>
